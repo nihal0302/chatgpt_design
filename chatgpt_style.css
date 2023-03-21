@@ -85,6 +85,7 @@ text-align: center;
     color: #fafafa;
     margin-top: 5%;
     letter-spacing: 1px;
+    line-height: 1.7;
 }
 .cta-secondary{
   margin-bottom: 3%;
@@ -285,6 +286,7 @@ width: 25%;
     color: #fafafa;
     margin: auto;
     margin-bottom: 5%;
+    line-height: 1.7;
   }
   .safety .part3{
     display: flex;
