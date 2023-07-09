@@ -5,10 +5,12 @@
         <title>Chatgpt redesign</title>
         <link rel="stylesheet" type="text/css" href="./chatgpt_style.css">
         <script src="javascriptfile.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </html>
 
     <body>
         <header>
+            <div class="navbar">
             <nav>
                 <div>
                   <img src="./assets/logo.png" style="position: relative; z-index: 4" alt="Logo">
@@ -21,6 +23,8 @@
                   <button class="cta-secondary"> Try ChatGPT </button>
                 </ul>
             </nav>
+        </div>
+
         </header>
 
 
@@ -93,6 +97,83 @@
         </div>
 
         <div class="gap"></div>
+
+        <div class="hiw">
+        <div class="big">
+            <div class="container">
+              <img src="./assets/image1.jpg">
+              <img src="./assets/image2.jpg">
+              <img src="./assets/image3.jpg">
+            </div>
+          </div>
+      
+          <div class="hiw_details">
+                  <h2>How does it work?</h2>
+                  <h6>01. Parsing the input</h6>
+                  <p style="font-size: 20px;">The algorithms will parse the sentence and identify the subject of the question, which in this case is the human eye. Next, they will analyze the grammatical structure and context of the question to determine what type of answer is being sought (e.g., a detailed explanation, a summary, a list of steps, etc.).</p>
+          <div class="next">
+            <div class="button-previous">
+              <i class="fa-solid fa-chevron-left" style="color: #0c0c0c; cursor: pointer;"></i>
+            </div>
+            <div class="current" style="font-size: large;">
+                1 / 3
+            </div>
+            <div class="button-next">
+              <i class="fa-solid fa-chevron-right" style="color: #0c0c0c; cursor: pointer;"></i>
+            </div>
+            </div>
+          </div>
+        </div>
+        
+   
+        <div class="gap1" style="margin-top: 15%;"></div>
+
+      <div class="features">
+        <h2>Smartest AI model</h2>
+        <div class="row1">
+        <div class="components">
+            <img src="./assets/icon1.png">
+            <h6>300 Billion words</h6>
+            <p>All your designs requests in one place. Backlog, in-progress, and approved work.</p>
+        </div>
+
+        <div class="components">
+            <img src="./assets/icon5.png">
+            <h6>40+ Language support</h6>
+            <p>All your designs requests in one place. Backlog, in-progress, and approved work.</p>
+        </div>
+
+        <div class="components">
+            <img src="./assets/icon2.png">
+            <h6>Conversational abilities</h6>
+            <p>All your designs requests in one place. Backlog, in-progress, and approved work.</p>
+        </div>
+    </div>
+    <div class="row1">
+
+        <div class="components">
+            <img src="./assets/icon6.png">
+            <h6>Personalized answers</h6>
+            <p>All your designs requests in one place. Backlog, in-progress, and approved work.</p>
+        </div>
+
+        <div class="components">
+            <img src="./assets/icon3.png">
+            <h6>Sentiment analysis</h6>
+            <p>All your designs requests in one place. Backlog, in-progress, and approved work.</p>
+        </div>
+
+        <div class="components">
+            <img src="./assets/icon4.png">
+            <h6>Continuous Learning</h6>
+            <p>All your designs requests in one place. Backlog, in-progress, and approved work.</p>
+        </div>
+    </div>
+
+      </div>
+
+      <div class="gap"></div>
+
 
         <div class="safety">
             <div class="top">
@@ -286,6 +367,70 @@ faqs.forEach((faq) => {
     }
   });
 });
+
+
+     window.addEventListener('scroll', function() {
+  const leftSide = document.querySelector('.left-side');
+  const rightSide = document.querySelector('.right-side');
+  const image1 = document.querySelector('img[src="./assets/image1.jpg"]');
+  const image2 = document.querySelector('img[src="./assets/image2.jpg"]');
+  const image3 = document.querySelector('img[src="./assets/image3.jpg"]');
+  const wrapper = document.querySelector('.wrapper');
+
+  if (window.pageYOffset >= wrapper.offsetTop && window.pageYOffset < image2.offsetTop) {
+    leftSide.style.position = 'sticky';
+    leftSide.style.top = '0';
+  }
+
+  if (window.pageYOffset >= image1.offsetTop && window.pageYOffset < image1.offsetTop + (0.65* image1.offsetHeight)) {
+    document.querySelector('h4').textContent = '01. Parsing the input';
+  } 
+
+  if (window.pageYOffset >= image1.offsetTop && window.pageYOffset > image1.offsetTop + (0.7* image1.offsetHeight)) {
+    document.querySelector('h4').textContent = '02. Retrieval of the Information';
+  } 
+
+  if (window.pageYOffset >= image2.offsetTop && window.pageYOffset > image2.offsetTop + (0.65* image2.offsetHeight)) {
+    document.querySelector('h4').textContent = '03. Synthesis and Output generation';
+  } 
+
+  
+});
+
+
+let prevScrollpos = window.pageYOffset;
+
+window.onscroll = function() {
+  let currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.querySelector(".navbar").classList.remove("navbar--hidden");
+  } else {
+    document.querySelector(".navbar").classList.add("navbar--hidden");
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+const container = document.querySelector('.container');
+      const buttonNext = document.querySelector('.button-next');
+      const buttonPrevious = document.querySelector('.button-previous');
+      let currentPosition = 0;
+
+      buttonNext.addEventListener('click', () => {
+        if (currentPosition === -72) {
+          return; // exit the event listener without doing anything
+        }
+        currentPosition -= 36;
+        container.style.transform = `translateX(${currentPosition}%)`;
+      });
+
+      buttonPrevious.addEventListener('click', () => {
+        if (currentPosition === 0) {
+          return; // exit the event listener without doing anything
+        }
+        currentPosition += 36;
+        container.style.transform = `translateX(${currentPosition}%)`;
+      });
+
 
         </script>
 

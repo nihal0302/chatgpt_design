@@ -6,7 +6,7 @@ body {
   font-family: 'Poppins', 'Source Sans Pro';
   margin: 0;
 }
-.hero-bottom, .sample-ex, .safety .bottom{
+.hero-bottom, .sample-ex, .safety .bottom, .features{
     margin: 0 4%;
 }
 header nav {
@@ -46,6 +46,11 @@ header nav a.active {
   height: auto;
   width: 60%;
 }
+.navbar--hidden {
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-out;
+}
+
 .hero{
 width: 100vw;
 height: 100vh;
@@ -265,6 +270,52 @@ width: 25%;
     width: 60%;
     margin-top: 3%;
   }
+
+  .hiw{
+    margin-left: 4%;
+  }
+  .big {
+    width: 45%;
+    overflow: hidden;
+    float: right;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    gap: 3%;
+    transition: transform 0.5s ease-in-out;
+  }
+  .big img {
+    width: 50%;
+    height: auto;
+  }
+  .next {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 42%;
+    margin-top: 4%;
+  }
+  h6{
+    font-size: 24px;
+    margin-bottom: 0;
+    margin-top: 3%;
+  }
+  .hiw_details p{
+    width: 42%;
+  }
+  
+ .components{
+  width: 30%;
+ }
+ .row1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 3%;
+ }
+
   .safety{
     width: 100vw;
     height: 130vh;
@@ -310,8 +361,8 @@ width: 25%;
   }
   .features{
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     gap: 15%;
   }
